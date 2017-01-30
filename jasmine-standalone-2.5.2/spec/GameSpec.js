@@ -28,7 +28,7 @@ describe ("Game", function() {
     expect(game.playerFour).toEqual([]);
   });
   it("should shuffle the cards out of perfect sequence", function () {
-    game.shuffle(this.deck);
+    game.shuffle(game.deck);
     expect(this.deck).not.toEqual(perfectDeck);
   });
 });
