@@ -26,3 +26,12 @@ Game.prototype.dealCard = function (deck, player) {
   var dealtCard = deck.pop();
   player.push(dealtCard);
 };
+
+Game.prototype.dealHand = function () {
+for (i=0; i < 7; i ++) {
+  this.dealCard(this.deck, this.playerOne);
+  this.dealCard(this.deck, this.playerTwo);
+  this.dealCard(this.deck, this.playerThree);
+  this.dealCard(this.deck, this.playerFour);
+  }
+};
