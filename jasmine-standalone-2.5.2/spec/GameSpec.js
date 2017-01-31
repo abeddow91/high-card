@@ -29,17 +29,14 @@ describe ("Game", function() {
   });
   it("should shuffle the cards out of perfect sequence", function () {
     game.shuffle(game.deck);
-    expect(this.deck).not.toEqual(perfectDeck);
+    expect(game.deck).not.toEqual(perfectDeck);
   });
   it("should deal a card from the array to player one", function () {
-    game.deal();
-    expect(this.playerOne.length).toEqual(1);
-  it("should deal a card from the deck to player one", function () {
-      game.deal();
-      expect(this.playerOne.length).toEqual(1);
+    game.deal(game.deck, game.playerOne);
+    expect(game.playerOne.length).toEqual(1);
   });
-  it("should remove a card from the deck after dealing", function () {
-      game.deal();
-      expect(this.playerOne.length).toEqual(1);
+  it("should deal a card from the deck to player one", function () {
+      game.deal(game.deck, game.playerOne);
+      expect(game.playerOne.length).toEqual(1);
   });
 });

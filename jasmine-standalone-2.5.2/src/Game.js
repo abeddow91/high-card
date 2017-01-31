@@ -21,3 +21,8 @@ Game.prototype.shuffle = function (array) {
     array[j] = temp;
   }
 };
+
+Game.prototype.deal = function (deck, player) {
+  var dealtCard = deck.pop();
+  player.push(dealtCard);
+}
