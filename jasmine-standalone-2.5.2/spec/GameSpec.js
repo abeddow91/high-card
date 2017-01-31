@@ -31,4 +31,15 @@ describe ("Game", function() {
     game.shuffle(game.deck);
     expect(this.deck).not.toEqual(perfectDeck);
   });
+  it("should deal a card from the array to player one", function () {
+    game.deal();
+    expect(this.playerOne.length).toEqual(1);
+  it("should deal a card from the deck to player one", function () {
+      game.deal();
+      expect(this.playerOne.length).toEqual(1);
+  });
+  it("should remove a card from the deck after dealing", function () {
+      game.deal();
+      expect(this.playerOne.length).toEqual(1);
+  });
 });
