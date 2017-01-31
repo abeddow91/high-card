@@ -32,11 +32,22 @@ describe ("Game", function() {
     expect(game.deck).not.toEqual(perfectDeck);
   });
   it("should deal a card from the array to player one", function () {
-    game.deal(game.deck, game.playerOne);
+    game.dealCard(game.deck, game.playerOne);
     expect(game.playerOne.length).toEqual(1);
   });
   it("should deal a card from the deck to player one", function () {
-      game.deal(game.deck, game.playerOne);
+      game.dealCard(game.deck, game.playerOne);
       expect(game.playerOne.length).toEqual(1);
+  });
+  it("should remove the dealt card from the deck", function () {
+    game.dealCard(game.deck, game.playerOne);
+    expect(game.deck).not.toContain(game.playerOne[0]);
+  });
+  it("should deal 7 cards to each player", function () {
+    game.dealHand();
+    expect(game.playerOne.length).toEqual(7);
+    expect(game.playerTwo.length).toEqual(7);
+    expect(game.playerThree.length).toEqual(7);
+    expect(game.playerFour.length).toEqual(7);
   });
 });

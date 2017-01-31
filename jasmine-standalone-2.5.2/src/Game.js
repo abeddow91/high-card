@@ -22,7 +22,7 @@ Game.prototype.shuffle = function (array) {
   }
 };
 
-Game.prototype.deal = function (deck, player) {
+Game.prototype.dealCard = function (deck, player) {
   var dealtCard = deck.pop();
   player.push(dealtCard);
-}
+};
