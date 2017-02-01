@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Anna Beddow</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="stylesheets/stylesheet.css">
+
+  <script src='./jasmine/src/Interface.js'></script>
+  <script src='./jasmine/src/Game.js'> </script>
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Kurt Geiger : Tech Test : Anna Beddow</h1>
+      <p>A digital croupier that deals 7 cards to 4 players.</p>
+      <br>
+      <button type="button" class="btn btn-deal btn-lg" id="deal">Deal</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <button type="button" class="btn btn-primary" id="p1btn">Show Player 1 Hand</button>
+    </div>
+    <div class="col-sm-3">
+      <button type="button" class="btn btn-primary" id="p2btn">Show Player 2 Hand</button>
+    </div>
+    <div class="col-sm-3">
+      <button type="button" class="btn btn-primary" id="p3btn">Show Player 3 Hand</button>
+    </div>
+    <div class="col-sm-3">
+      <button type="button" class="btn btn-primary" id="p4btn">Show Player 4 Hand</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Player 1 Hand</p>
+    </div>
+    <div class="col-sm-3">
+      <p>Player 2 Hand</p>
+    </div>
+    <div class="col-sm-3">
+      <p>Player 3 Hand</p>
+    </div>
+    <div class="col-sm-3">
+      <p>Player 4 Hand</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="player" id="p1hand"></div>
+    </div>
+    <div class="col-sm-3">
+      <div class="player" id="p2hand"></div>
+    </div>
+    <div class="col-sm-3">
+      <div class="player" id="p3hand"></div>
+    </div>
+    <div class="col-sm-3">
+      <div class="player" id="p4hand"></div>
+    </div>
+  </div>
+
+</body>
+</html>
