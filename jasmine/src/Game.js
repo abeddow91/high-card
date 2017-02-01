@@ -1,8 +1,8 @@
 function Game() {
-  this.deck = [" 2h"," 3h"," 4h"," 5h"," 6h"," 7h"," 8h"," 9h"," 10h"," Jh"," Qh"," Kh"," Ah",
-               " 2c"," 3c"," 4c"," 5c"," 6c"," 7c"," 8c"," 9c"," 10c"," Jc"," Qc"," Kc"," Ac",
-               " 2s"," 3s"," 4s"," 5s"," 6s"," 7s"," 8s"," 9s"," 10s"," Js"," Qs"," Ks"," As",
-               " 2d"," 3d"," 4d"," 5d"," 6d"," 7d"," 8d"," 9d"," 10d"," Jd"," Qd"," Kd"," Ad",];
+  this.deck = ["2h","3h","4h","5h","6h","7h","8h","9h","10h","11h","12h","13h","14h",
+               "2c","3c","4c","5c","6c","7c","8c","9c","10c","11c","12c","13c","14c",
+               "2s","3s","4s","5s","6s","7s","8s","9s","10s","11s","12s","13s","14s",
+               "2d","3d","4d","5d","6d","7d","8d","9d","10d","11d","12d","13d","14d",];
   this.playerOne = [];
   this.playerTwo = [];
   this.playerThree = [];
@@ -42,5 +42,12 @@ Game.prototype.deal = function () {
 };
 
 Game.prototype.showHand = function (hand) {
-  return hand.toString();
+  var stringHand =  hand.toString();
+  return stringHand.replace(/,/g, ", ");
+
 };
+//
+// console.log("papa".replace("11", "J"));
+// console.log("papa".replace("12", "Q"));
+// console.log("papa".replace("13", "K"));
+// console.log("papa".replace("14", "A"));
