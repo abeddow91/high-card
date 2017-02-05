@@ -4,7 +4,7 @@ describe ("Game", function() {
                  "2c","3c","4c","5c","6c","7c","8c","9c","10c","11c","12c","13c","14c",
                  "2s","3s","4s","5s","6s","7s","8s","9s","10s","11s","12s","13s","14s",
                  "2d","3d","4d","5d","6d","7d","8d","9d","10d","11d","12d","13d","14d",];
-  randomHand = ["3s","Jd","6d","9c","2c","As","4h"];
+  randomHand = [3,11,14,43,23,4,51];
   player = "Anna";
   beforeEach(function() {
     game = new Game();
@@ -51,7 +51,11 @@ describe ("Game", function() {
     expect(game.playerThree.length).toEqual(7);
     expect(game.playerFour.length).toEqual(7);
   });
-  it("should return the player's hand", function () {
+  xit("should return the player's hand", function () {
     expect(game.showHand(randomHand)).toEqual("3s, Jd, 6d, 9c, 2c, As, 4h");
+  });
+  it("should sort the player's hand by highest to lowest", function (){
+    game.highCardSort(randomHand);
+    expect(game.playerOne).toEqual([51, 23, 43, 14, 11, 3]);
   });
 });
