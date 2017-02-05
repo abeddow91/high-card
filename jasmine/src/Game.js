@@ -132,8 +132,11 @@ Game.prototype.determineWinner = function() {
   }
 };
 
-
-
+Game.prototype.convertHand = function (hand) {
+  for(var i=0; i < hand.length; i++) {
+    hand[i]= this.cards[hand[i]];
+  }
+};
 
 
 //

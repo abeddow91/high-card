@@ -69,6 +69,6 @@ describe ("Game", function() {
   });
   it("should convert the integer hand into a hand of cards", function () {
     game.convertHand(randomHand);
-    expect(randomHand).toEqual(["A ♦︎","Q ♠︎","7 ♠︎","5 ♣︎","4 ♠︎","2 ♦︎","2 ♠︎"]);
+    expect(randomHand).toEqual(["A ♠︎","Q ♠︎","7 ♠︎","5 ♣︎","4 ♠︎","2 ♦︎","2 ♠︎"]);
   });
 });
