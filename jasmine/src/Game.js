@@ -55,11 +55,7 @@ function Game() {
     50: "A ♣︎",
     51: "A ♠︎",
     52: "A ♦︎"};
-  this.playerOne = [];
-  this.playerTwo = [];
-  this.playerThree = [];
-  this.playerFour = [];
-  this.allPlayers= [this.playerOne, this.playerTwo, this.playerThree, this.playerFour];
+  this.players= [[], [], [], []];
   this.winner = "";
 }
 
@@ -83,8 +79,8 @@ Game.prototype.dealCard = function (deck, player) {
 
 Game.prototype.dealMultipleHands = function () {
 for(i=0; i<7; i++) {
-  for(var j=0; j<this.allPlayers.length; j++) {
-    this.dealCard(this.deck,this.allPlayers[j]);
+  for(var j=0; j<this.players.length; j++) {
+    this.dealCard(this.deck,this.players[j]);
     }
   }
 };
@@ -111,17 +107,17 @@ Game.prototype.naturalCardSort = function (hand) {
 };
 
 Game.prototype.sortHands = function () {
-  for(var i=0; i<this.allPlayers.length; i++) {
-    this.naturalCardSort(this.allPlayers[i]);
+  for(var i=0; i<this.players.length; i++) {
+    this.naturalCardSort(this.players[i]);
   }
 };
 
 Game.prototype.determineWinner = function() {
-  if (this.playerOne[0] > this.playerTwo[0] && this.playerOne[0] > this.playerThree[0] && this.playerFour[0]) {
+  if (this.players[0][0] > this.players[1][0] && this.players[0][0] > this.players[2][0] && this.players[0][0] > this.players[3][0]) {
     this.winner = "Player One";
-  } else if (this.playerTwo[0] > this.playerThree[0] && this.playerTwo[0] > this.playerFour[0]) {
+  } else if (this.players[1][0] > this.players[2][0] && this.players[1][0] > this.players[3][0]) {
     this.winner = "Player Two";
-  } else if (this.playerThree[0] > this.playerFour[0]) {
+  } else if (this.players[2][0] > this.players[3][0]) {
     this.winner = "Player Three";
   } else {
     this.winner = "Player Four";
@@ -135,7 +131,7 @@ Game.prototype.convertHand = function (hand) {
 };
 
 Game.prototype.convertAllCards = function () {
-  for(var i=0; i<this.allPlayers.length; i++) {
-    this.convertHand(this.allPlayers[i]);
+  for(var i=0; i<this.players.length; i++) {
+    this.convertHand(this.players[i]);
   }
 };
