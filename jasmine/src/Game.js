@@ -55,6 +55,7 @@ function Game() {
     50: "A ♣︎",
     51: "A ♠︎",
     52: "A ♦︎"};
+  this.totalPlayers;
   this.players= [[], [], [], []];
   this.winner = "";
   this.highCard;

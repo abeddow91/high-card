@@ -1,17 +1,18 @@
 $(document).ready(function(){
-  var game;
+    var game = new Game();
 
   $('#deal').click(function (){
-      game = new Game();
       game.deal();
       $(".winner").text("");
       $(".player").text("? ? ? ? ? ? ? ");
+      console.log(game.totalPlayers);
     });
 
     $('#submit').click(function (){
       $('.game').removeClass("hidden");
       $('#deal').removeClass("hidden");
       $('.playernumber').addClass("hidden");
+      game.totalPlayers = document.getElementById("playerNumber").value;
       });
 
   $('#p1btn').click(function (){
