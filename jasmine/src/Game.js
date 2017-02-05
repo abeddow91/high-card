@@ -135,8 +135,7 @@ Game.prototype.convertHand = function (hand) {
 };
 
 Game.prototype.convertAllCards = function () {
-  this.convertHand(this.playerOne);
-  this.convertHand(this.playerTwo);
-  this.convertHand(this.playerThree);
-  this.convertHand(this.playerFour);
+  for(var i=0; i<this.allPlayers.length; i++) {
+    this.convertHand(this.allPlayers[i]);
+  }
 };
