@@ -13,6 +13,7 @@ $(document).ready(function(){
       $('#deal').removeClass("hidden");
       $('.playernumber').addClass("hidden");
       game.totalPlayers = document.getElementById("playerNumber").value;
+      game.setUpPlayers();
       });
 
   $('#p1btn').click(function (){

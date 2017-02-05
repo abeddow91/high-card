@@ -55,8 +55,8 @@ function Game() {
     50: "A ♣︎",
     51: "A ♠︎",
     52: "A ♦︎"};
-  this.totalPlayers;
-  this.players= [[], [], [], []];
+  this.totalPlayers = 0;
+  this.players= [];
   this.winner = "";
   this.highCard;
 }
@@ -86,6 +86,12 @@ for(i=0; i<7; i++) {
     }
   }
 };
+
+Game.prototype.setUpPlayers = function () {
+  for(i=0; i<this.totalPlayers; i++) {
+      this.players.push([]);
+    }
+}
 
 Game.prototype.deal = function () {
   this.shuffle(this.deck);

@@ -15,37 +15,59 @@ describe ("Game", function() {
   it("should have a deck in perfect sequence", function() {
     expect(game.deck).toEqual(perfectDeck);
   });
-  it("should initialize the game with player one who has no cards", function() {
-    expect(game.players[0]).toEqual([]);
-  });
-  it("should initialize the game with player two who has no cards", function() {
-    expect(game.players[1]).toEqual([]);
-  });
-  it("should initialize the game with player three who has no cards", function() {
-    expect(game.players[2]).toEqual([]);
-  });
-  it("should initialize the game with player four who has no cards", function() {
-    expect(game.players[3]).toEqual([]);
+  describe ("Player Setup", function () {
+
+    beforeEach(function() {
+      game.totalPlayers = 4;
+      game.setUpPlayers();
+    });
+
+    it("should initialize the game with player one who has no cards", function() {
+      expect(game.players[0]).toEqual([]);
+    });
+    it("should initialize the game with player two who has no cards", function() {
+      expect(game.players[1]).toEqual([]);
+    });
+    it("should initialize the game with player three who has no cards", function() {
+      expect(game.players[2]).toEqual([]);
+    });
+    it("should initialize the game with player four who has no cards", function() {
+      expect(game.players[3]).toEqual([]);
+    });
+
   });
   it("should shuffle the cards out of perfect sequence", function () {
     game.shuffle(game.deck);
     expect(game.deck).not.toEqual(perfectDeck);
   });
-  it("should deal a card from the deck to player one", function () {
-    game.dealCard(game.deck, game.players[0]);
-    expect(game.players[0].length).toEqual(1);
+
+
+  describe("Deal Cards", function () {
+
+    beforeEach(function() {
+      game.totalPlayers = 4;
+      game.setUpPlayers();
+    });
+
+    it("should deal a card from the deck to player one", function () {
+      game.dealCard(game.deck, game.players[0]);
+      expect(game.players[0].length).toEqual(1);
+    });
+    it("should remove the dealt card from the deck", function () {
+      game.dealCard(game.deck, game.players[0]);
+      expect(game.deck).not.toContain(game.players[0][0]);
+    });
+    it("should deal 7 cards to each player", function () {
+      game.dealMultipleHands();
+      expect(game.players[0].length).toEqual(7);
+      expect(game.players[1].length).toEqual(7);
+      expect(game.players[2].length).toEqual(7);
+      expect(game.players[3].length).toEqual(7);
+    });
+
   });
-  it("should remove the dealt card from the deck", function () {
-    game.dealCard(game.deck, game.players[0]);
-    expect(game.deck).not.toContain(game.players[0][0]);
-  });
-  it("should deal 7 cards to each player", function () {
-    game.dealMultipleHands();
-    expect(game.players[0].length).toEqual(7);
-    expect(game.players[1].length).toEqual(7);
-    expect(game.players[2].length).toEqual(7);
-    expect(game.players[3].length).toEqual(7);
-  });
+
+
   it("should return the player's hand", function () {
     expect(game.showHand(randomHand)).toEqual("3, 11, 14, 43, 23, 4, 51");
   });
@@ -74,5 +96,11 @@ describe ("Game", function() {
   it("should convert the integer hand into a hand of cards", function () {
     game.convertHand(randomHand);
     expect(randomHand).toEqual(["A ♠︎","Q ♠︎","7 ♠︎","5 ♣︎","4 ♠︎","2 ♦︎","2 ♠︎"]);
+  });
+  it("should initialize with zero total players", function () {
+    expect(game.totalPlayers).toBe(0);
+  });
+  it("should initialize without any players ", function () {
+    expect(game.players.length).toEqual(0);
   });
 });
