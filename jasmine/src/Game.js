@@ -98,6 +98,7 @@ Game.prototype.deal = function () {
   this.dealMultipleHands();
   this.sortHands();
   this.determineWinner();
+  this.convertAllCards();
 };
 
 Game.prototype.showHand = function (hand) {
@@ -138,6 +139,12 @@ Game.prototype.convertHand = function (hand) {
   }
 };
 
+Game.prototype.convertAllCards = function () {
+  this.convertHand(this.playerOne);
+  this.convertHand(this.playerTwo);
+  this.convertHand(this.playerThree);
+  this.convertHand(this.playerFour);
+};
 
 //
 // console.log("papa".replace("11", "J"));
