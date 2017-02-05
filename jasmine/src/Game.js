@@ -59,6 +59,7 @@ function Game() {
   this.playerTwo = [];
   this.playerThree = [];
   this.playerFour = [];
+  this.allPlayers= [this.playerOne, this.playerTwo, this.playerThree, this.playerFour];
   this.winner = "";
 }
 
@@ -81,11 +82,10 @@ Game.prototype.dealCard = function (deck, player) {
 };
 
 Game.prototype.dealMultipleHands = function () {
-for (i=0; i < 7; i ++) {
-  this.dealCard(this.deck, this.playerOne);
-  this.dealCard(this.deck, this.playerTwo);
-  this.dealCard(this.deck, this.playerThree);
-  this.dealCard(this.deck, this.playerFour);
+for(i=0; i<7; i++) {
+  for(var j=0; j<this.allPlayers.length; j++) {
+    this.dealCard(this.deck,this.allPlayers[j]);
+    }
   }
 };
 
@@ -111,10 +111,9 @@ Game.prototype.naturalCardSort = function (hand) {
 };
 
 Game.prototype.sortHands = function () {
-  this.naturalCardSort(this.playerOne);
-  this.naturalCardSort(this.playerTwo);
-  this.naturalCardSort(this.playerThree);
-  this.naturalCardSort(this.playerFour);
+  for(var i=0; i<this.allPlayers.length; i++) {
+    this.naturalCardSort(this.allPlayers[i]);
+  }
 };
 
 Game.prototype.determineWinner = function() {
