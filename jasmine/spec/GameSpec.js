@@ -61,7 +61,7 @@ describe ("Game", function() {
     game.players[2] = [52, 38, 35, 22, 21, 8, 7];
     game.players[3] = [19, 18, 17, 13, 10, 5, 1];
     game.determineWinner();
-    expect(game.winner).toEqual("Player Three");
+    expect(game.winner).toEqual(3);
   });
   it("should convert the integer hand into a hand of cards", function () {
     game.convertHand(randomHand);

@@ -29,7 +29,7 @@ $(document).ready(function(){
     document.getElementById('p2hand').innerHTML = game.showHand(game.players[1]);
     document.getElementById('p3hand').innerHTML = game.showHand(game.players[2]);
     document.getElementById('p4hand').innerHTML = game.showHand(game.players[3]);
-    $(".winner").text(game.winner + " Wins !");
+    $(".winner").text("Player " + game.winner + " Wins !");
     });
 
 

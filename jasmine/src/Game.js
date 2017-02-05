@@ -57,6 +57,7 @@ function Game() {
     52: "A ♦︎"};
   this.players= [[], [], [], []];
   this.winner = "";
+  this.highCard;
 }
 
 Game.prototype.shuffle = function (array) {
@@ -112,15 +113,21 @@ Game.prototype.sortHands = function () {
   }
 };
 
+Game.prototype.setHighCard = function (){
+  this.highCard = this.players[0][0];
+  for(var i=0; i<this.players.length; i++) {
+    if(this.highCard < this.players[i][0]) {
+      this.highCard = this.players[i][0];
+    }
+  }
+};
+
 Game.prototype.determineWinner = function() {
-  if (this.players[0][0] > this.players[1][0] && this.players[0][0] > this.players[2][0] && this.players[0][0] > this.players[3][0]) {
-    this.winner = "Player One";
-  } else if (this.players[1][0] > this.players[2][0] && this.players[1][0] > this.players[3][0]) {
-    this.winner = "Player Two";
-  } else if (this.players[2][0] > this.players[3][0]) {
-    this.winner = "Player Three";
-  } else {
-    this.winner = "Player Four";
+  this.setHighCard();
+  for(var i=0; i<this.players.length; i++) {
+    if(this.highCard === this.players[i][0]) {
+      this.winner = i + 1;
+    }
   }
 };
 
