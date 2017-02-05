@@ -50,8 +50,8 @@ describe ("Game", function() {
     expect(game.playerThree.length).toEqual(7);
     expect(game.playerFour.length).toEqual(7);
   });
-  xit("should return the player's hand", function () {
-    expect(game.showHand(randomHand)).toEqual("3s, Jd, 6d, 9c, 2c, As, 4h");
+  it("should return the player's hand", function () {
+    expect(game.showHand(randomHand)).toEqual("3, 11, 14, 43, 23, 4, 51");
   });
 
   it("should sort the player's hand by highest to lowest", function (){
