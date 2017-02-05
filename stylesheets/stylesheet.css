@@ -52,6 +52,10 @@ p {
 
 }
 
+#playerNumber {
+  color: #682A8E;
+}
+
 .winner {
   text-align: center;
   font-size: 32px ;

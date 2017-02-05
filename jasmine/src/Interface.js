@@ -8,6 +8,12 @@ $(document).ready(function(){
       $(".player").text("? ? ? ? ? ? ? ");
     });
 
+    $('#submit').click(function (){
+      $('.game').removeClass("hidden");
+      $('#deal').removeClass("hidden");
+      $('.playernumber').addClass("hidden");
+      });
+
   $('#p1btn').click(function (){
     document.getElementById('p1hand').innerHTML = game.showHand(game.players[0]);
     });
