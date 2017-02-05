@@ -10,6 +10,7 @@ function Game() {
   this.playerTwo = [];
   this.playerThree = [];
   this.playerFour = [];
+  this.winner = "";
 }
 
 Game.prototype.shuffle = function (array) {
@@ -55,6 +56,18 @@ Game.prototype.naturalCardSort = function (hand) {
     return a - b;
   });
   hand.reverse();
+};
+
+Game.prototype.determineWinner = function() {
+  if (this.playerOne[0] > this.playerTwo[0] && this.playerOne[0] > this.playerThree[0] && this.playerFour[0]) {
+    this.winner = "Player One";
+  } else if (this.playerTwo[0] > this.playerThree[0] && this.playerTwo[0] > this.playerFour[0]) {
+    this.winner = "Player Two";
+  } else if (this.playerThree[0] > this.playerFour[0]) {
+    this.winner = "Player Three";
+  } else {
+    this.winner = "Player Four";
+  }
 };
 
 

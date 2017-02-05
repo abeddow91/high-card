@@ -58,4 +58,13 @@ describe ("Game", function() {
     game.naturalCardSort(randomHand);
     expect(randomHand).toEqual([51, 43, 23, 14, 11, 4, 3]);
   });
+
+  it("should store the player with the highest integer as the winner", function () {
+    game.playerOne = [51, 43, 23, 14, 11, 4, 3];
+    game.playerTwo = [41, 40, 33, 26, 16, 12, 9];
+    game.playerThree = [52, 38, 35, 22, 21, 8, 7];
+    game.playerFour = [19, 18, 17, 13, 10, 5, 1];
+    game.determineWinner();
+    expect(game.winner).toEqual("Player Three");
+  });
 });
