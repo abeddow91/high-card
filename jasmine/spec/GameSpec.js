@@ -54,6 +54,9 @@ describe ("Game", function() {
   xit("should return the player's hand", function () {
     expect(game.showHand(randomHand)).toEqual("3s, Jd, 6d, 9c, 2c, As, 4h");
   });
+  it("should compare numbers and return the difference", function(){
+    expect(game.compareNumbers(11,8)).toEqual(3);
+  });
   it("should sort the player's hand by highest to lowest", function (){
     game.highCardSort(randomHand);
     expect(game.playerOne).toEqual([51, 23, 43, 14, 11, 3]);
