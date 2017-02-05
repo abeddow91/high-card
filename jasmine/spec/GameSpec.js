@@ -67,4 +67,8 @@ describe ("Game", function() {
     game.determineWinner();
     expect(game.winner).toEqual("Player Three");
   });
+  it("should convert the integer hand into a hand of cards", function () {
+    game.convertHand(randomHand);
+    expect(randomHand).toEqual(["A ♦︎","Q ♠︎","7 ♠︎","5 ♣︎","4 ♠︎","2 ♦︎","2 ♠︎"]);
+  });
 });
