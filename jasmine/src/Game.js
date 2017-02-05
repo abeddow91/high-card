@@ -43,6 +43,8 @@ for (i=0; i < 7; i ++) {
 Game.prototype.deal = function () {
   this.shuffle(this.deck);
   this.dealMultipleHands();
+  this.sortHands();
+  this.determineWinner();
 };
 
 Game.prototype.showHand = function (hand) {
@@ -56,6 +58,13 @@ Game.prototype.naturalCardSort = function (hand) {
     return a - b;
   });
   hand.reverse();
+};
+
+Game.prototype.sortHands = function () {
+  this.naturalCardSort(this.playerOne);
+  this.naturalCardSort(this.playerTwo);
+  this.naturalCardSort(this.playerThree);
+  this.naturalCardSort(this.playerFour);
 };
 
 Game.prototype.determineWinner = function() {

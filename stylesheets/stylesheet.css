@@ -44,3 +44,8 @@ p {
 .col-sm-3 {
   text-align: center;
 }
+.winner {
+  text-align: center;
+  font-size: 16px ;
+  padding-top: 5%;
+}
