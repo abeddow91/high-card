@@ -50,12 +50,11 @@ Game.prototype.showHand = function (hand) {
 
 };
 
-Game.prototype.compareNumbers = function (a, b) {
-  return a - b;
-};
-
-Game.prototype.highCardSort = function (hand) {
-  return hand.sort(compareNumbers);
+Game.prototype.naturalCardSort = function (hand) {
+  hand.sort(function (a,b) {
+    return a - b;
+  });
+  hand.reverse();
 };
 
 
