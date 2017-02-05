@@ -8,7 +8,7 @@ h2 {
   font-weight: bold ;
 }
 p {
-  font-size: 16px ;
+  font-size: 26px ;
   color: #cdcdcd ;
 }
 .jumbotron {
@@ -44,8 +44,15 @@ p {
 .col-sm-3 {
   text-align: center;
 }
+
+#showallbtncontainer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+
+}
+
 .winner {
   text-align: center;
-  font-size: 16px ;
-  padding-top: 5%;
+  font-size: 32px ;
 }
