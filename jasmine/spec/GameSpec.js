@@ -66,6 +66,36 @@ describe ("Game", function() {
     });
 
   });
+  describe("Game with 3 players", function () {
+
+    beforeEach(function() {
+      game.totalPlayers = 3;
+      game.setUpPlayers();
+    });
+
+    it("should deal 7 cards to each player", function () {
+      game.dealMultipleHands();
+      expect(game.players[0].length).toEqual(7);
+      expect(game.players[1].length).toEqual(7);
+      expect(game.players[2].length).toEqual(7);
+        });
+    it("should store the highest card dealt", function () {
+      game.players[0] = [51, 43, 23, 14, 11, 4, 3];
+      game.players[1] = [41, 40, 33, 26, 16, 12, 9];
+      game.players[2] = [52, 38, 35, 22, 21, 8, 7];
+      game.setHighCard();
+      expect(game.highCard).toEqual(52);
+    });
+    it("should store the player with the highest integer as the winner", function () {
+      game.players[0] = [51, 43, 23, 14, 11, 4, 3];
+      game.players[1] = [41, 40, 33, 26, 16, 12, 9];
+      game.players[2] = [52, 38, 35, 22, 21, 8, 7];
+      game.determineWinner();
+      expect(game.winner).toEqual(3);
+    });
+
+
+  });
 
 
   it("should return the player's hand", function () {

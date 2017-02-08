@@ -91,7 +91,7 @@ Game.prototype.setUpPlayers = function () {
   for(i=0; i<this.totalPlayers; i++) {
       this.players.push([]);
     }
-}
+};
 
 Game.prototype.deal = function () {
   this.shuffle(this.deck);

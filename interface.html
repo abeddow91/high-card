@@ -15,10 +15,11 @@
 <body>
   <div class="jumbotron">
     <div class="container">
-      <h1>High Card Wins!</h1>
-      <p>A digital croupier that deals 7 cards to 4 players. Whichever player has the highest card wins!</p>
+      <h1>High Card</h1>
+      <p>A digital croupier that deals 7 cards to 4 players. Diamonds are highest then Spades, Clubs and Hearts. Ace is high, 2 is low. Whichever player has the highest card wins!</p>
       <br>
       <form class="playernumber">
+      <p>Select Number of Players<p>
       <input type="number" id="playerNumber" min="2" max="4">
       <button type="button" class="btn btn-primary" id="submit">Submit</button>
       </form>
@@ -55,7 +56,7 @@
       </div>
     </div>
     <div class="container" align="center" id="showallbtncontainer">
-        <button type="button" class="btn btn-primary" id="showallbtn">Show All Hands</button>
+        <button type="button" class="btn btn-primary hidden" id="showallbtn">Show All Hands</button>
     </div>
     <div class="row">
       <div class="col-sm-12">
